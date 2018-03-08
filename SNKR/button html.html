@@ -46,19 +46,21 @@
     <hr>
 
     <div class="container">
-        <h1>Movie Search</h1>
+        <h1>Weather Forecast Search</h1>
 
         <!-- We'll be dumping our JSON contents in here -->
-        <div id="movie-view"></div>
+        <div id="forecast-view"></div>
 
         <!-- This form will be where users input data about the movies -->
-        <form id="movie-form">
-            <label for="movie-input">Search for a movie</label>
-            <input type="text" id="movie-input">
+        <form id="search-form">
+            <label for="city-input">Location: </label>
+            <input type="text" id="zipcode-input" placeholder=" Postal Code">
             <br>
 
             <!-- This button will trigger our AJAX call -->
-            <input id="find-movie" type="submit" value="Movie Search">
+            <input id="find-current" type="submit" value="Current Forecast">
+            <!-- <input id="find-hours" type="submit" value="Hourly Forecast"> -->
+            <!-- <input id="find-daily" type="submit" value="5 Day Forecast"> -->
         </form>
     </div>
 
@@ -66,17 +68,9 @@
 
 
 
-    <!-- <form id="weather-form">
-      <label for="city-input"></label>
-      <input type="text" id="city-input" placeholder="City,St"><br>
-
-     
-      <input id="find-current" type="submit" value="Current Forecast">
-      <input id="find-hourly" type="submit" value="Hourly Forecast">
-      <input id="find-daily" type="submit" value="Daily Forecast">
-    </form> -->
 
 
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" script src="main.js"></script>
 
