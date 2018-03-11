@@ -1,8 +1,8 @@
-$("button").on("click", function () {
+$(".button-container").on("click", function () {
 
     var sign = $(this).attr("data-sign");
 
-    var queryURL = "https://aztro.herokuapp.com?sign=" + sign + "&day=yesterday";
+    var queryURL = "https://aztro.herokuapp.com?sign=" + sign + "&day=today";
 
     $.ajax({
         type: "POST",
@@ -11,9 +11,19 @@ $("button").on("click", function () {
             console.log(data);
 
             var hsDiv = $("<div class='item'>");
+
             var scope = data.description;
-            var p = $("<p>").text("This is your horoscope for " + data.current_date + ": " + scope);
-            hsDiv.append(p);
+            var color = $("<color>").text("Your lucky color today is " + data.color);
+            // var comp = $("<comp>").text("Today, you're compatible with a " + data.compatibility);
+            var number = $("<color>").text("Your lucky number is " + data.lucky_number);
+            var time = $("<color>").text("Pay attention at " + data.lucky_time + "because that's your lucky time!");
+            var mood = $("<color>").text("You're probably feeling " + data.mood + "today.");
+            var p = $("<p>").text("This is " + sign + "'s (" + data.date_range + ") " + "horoscope for " + data.current_date + ": " + scope);
+
+
+            hsDiv.append(p, color, time, number, mood);
+            // color.append(number, time);
+            // time.append(mood);
             $("#reading-appear-here").prepend(hsDiv);
         }
     });
