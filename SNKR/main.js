@@ -23,8 +23,9 @@ $("button").on("click", function () {
 $("#find-current").on("click", function (event) {
     event.preventDefault();
 
+    // var key = "5961b980628e3194ee5db887acf34602";
     var zip = $("#zipcode-input").val();
-    var queryURL = "http://dataservice.accuweather.com/forecasts/v1/daily/1day/" + zip + "?apikey=zQ3D04GNMqKRvCfeu1qG7MHIx4LNUZ7q";
+    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?zip=" + zip + "&appid=4a21589577f6e6c281bf65513ad6c951";
 
     $.ajax({
         type: "GET",
@@ -33,11 +34,11 @@ $("#find-current").on("click", function (event) {
         console.log(response);
 
         var wfDiv = $("<div class='item'>");
-        var weatherImage = $("<img>");
-        weatherImage.attr("src", response.DailyForecasts.Day.Icon[0]);
-        var line = response.DailyForecasts.Day.IconPhrase[0];
-        var r = $("<p>").text("Today is " + line);
-        wfDiv.append(weatherImage)
+        // var weatherImage = $("<img>");
+        // weatherImage.attr("src", response.DailyForecasts.Day.Icon[0]);
+        var line = response.list[0].weather[0].description;
+        var r = $("<p>").text("Weather Forecast: " + line);
+        // wfDiv.append(weatherImage)
         wfDiv.append(r)
 
         $("#forecast-view").prepend(wfDiv);
