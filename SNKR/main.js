@@ -1,7 +1,5 @@
 // CALENDAR JQUERY
-
 $(document).ready(function () {
-
     $('#calendar').fullCalendar({
         header: {
             left: 'prev,next today',
@@ -69,8 +67,51 @@ $(document).ready(function () {
             }
         ]
     });
+    var modal = document.getElementById('calendarModal');
+    var span = document.getElementsByClassName("close")[0];
+    // Get the modal
 
+    // Get the button that opens the modal
+    var btn = document.getElementById("calendarButton");
+    // When the user clicks on (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    $(document).on("click", ".fc-day", function () {
+        ///call modal to come up 
+        // $('#calendarModal').modal({
+
+        modal.style.display = "block"
+    });
+
+    $("#submit").click(function (event) {
+
+        var newEvent = {
+            title: $(".event-name").val,
+            start: $(".event-date").val,
+            time: $(".event-time").val,
+            text: $(".message-text").val
+
+        };
+        events.push(newEvent);
+        $('#calendar').fullCalendar('updateEvents', events);
+
+        ///clear events 
+        ///recall the array of events to the calendar 
+    });
 });
+
+
+
+
+// $(this).css('border-color', 'red');
+
+
 
 
 //   BUTTON JQUERY
@@ -98,9 +139,9 @@ $(".button-container").on("click", function () {
 
 
             hsDiv.append(p);
-            // hsDiv.append(p, color, time, number, mood);
-            // color.append(number, time);
-            // time.append(mood);
+            hsDiv.append(p, color, time, number, mood);
+            color.append(number, time);
+            time.append(mood);
             $("#reading-appear-here").prepend(hsDiv);
         }
     });
