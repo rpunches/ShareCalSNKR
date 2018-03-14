@@ -28,13 +28,18 @@
     <!-- Local CSS Ref -->
     <link rel="stylesheet" type="text/css" media="screen" href="css.css" />
     <!--  -->
+    <link href='https://fonts.googleapis.com/css?family=BenchNine' rel='stylesheet'>
 
 
 </head>
 
 <body>
     <div class="container-fluid">
-
+            <div class="jumbotron">
+                    <h1 class="display-3">SNKR</h1>
+                    <p class="lead">Your Daily Horoscope. Your Personal Stylist. Your Time.</p>
+                  
+                  </div>
         <div class="row">
             <div class="col-7">
                 <div id='calendar'></div>
@@ -185,6 +190,7 @@
                                     <br>
                                 </form>
                             </div>
+                           
                             <div class="col">
                                 <div class="container" style="float: right">
                                     <div id="forecast-view">
@@ -195,6 +201,8 @@
                         </div>
                     </div>
                 </div>
+                <br>
+              
                 <!-- Trigger/Open The Modal -->
                 <button id="calendarButton">Create Event</button>
 
@@ -205,19 +213,19 @@
                     <div class="modal-content">
                         <form>
                             <div class="form-group">
-                                <label for="event-name" class="form-control-label">Event Name:</label>
+                                <label for="event-name" class="form-control-label text-white"">Event Name:</label>
                                 <input type="text" class="form-control" id="event-name" placeholder="event name">
                             </div>
                             <div class="form-group">
-                                <label for="date-text" class="form-control-label">Date:</label>
+                                <label for="date-text" class="form-control-label text-white"">Date:</label>
                                 <input type="date" class="form-control" id="event-date" placeholder="Date">
                             </div>
                             <div class="form-group">
-                                <label for="time-text" class="form-control-label">Time:</label>
+                                <label for="time-text" class="form-control-label text-white"">Time:</label>
                                 <input type="time" class="form-control" id="event-time" placeholder=" Postal Code">
                             </div>
                             <div class="form-group">
-                                <label for="message-text" class="form-control-label">Event Details:</label>
+                                <label for="message-text" class="form-control-label text-white"">Event Details:</label>
                                 <textarea class="form-control" id="message-text"></textarea>
                             </div>
                         </form>
@@ -225,7 +233,7 @@
 
                         <div class="modal-footer">
                             <br>
-                            <button type="button" id="submit" class="btn btn-primary">Add Event</button>
+                            <button type="button" id="submit" class="btn btn-white">Add Event</button>
                         </div>
                         <span class="close">&times;</span>
                     </div>

@@ -2,7 +2,8 @@ body {
     font-size: 14px;
     /* font-family:'Source Sans Pro'; */
     /* font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif; */
-    background: whitesmoke;
+    background: 		#8FBC8F;
+    font-family: 'BenchNine';font-size: 22px;
 }
 
  /* The Modal (background) */
@@ -34,6 +35,7 @@ body {
 
   .modal-content {
     background-color: #fefefe;
+    background-image: url(modalbackground.png);
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -144,4 +146,10 @@ h6{
   width: 20%;
   height: auto !important;
 }
+#calendarButton {
+  float: left;
+}
   
+.jumbotron {
+  background:	#FFFACD;
+}
