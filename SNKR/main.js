@@ -92,24 +92,19 @@ $(document).ready(function () {
     $("#submit").click(function (event) {
 
         var newEvent = {
-            title: $(".event-name").val,
-            start: $(".event-date").val,
-            time: $(".event-time").val,
-            text: $(".message-text").val
+            title: $("#event-name").val(),
+            start: $("#event-date").val(),
+            ///time: $("#event-time").val(),
+            ///text: $("#message-text").val(),
 
         };
-        events.push(newEvent);
-        $('#calendar').fullCalendar('updateEvents', events);
+        ///$('#calendar').fullCalendar('option', 'events', [newEvent]);
+        ///console.log($('#calendar').fullCalendar('option', 'events'));
+        $("#calendar").fullCalendar('renderEvent', newEvent, true);
+        modal.style.display = "none";
 
-        ///clear events 
-        ///recall the array of events to the calendar 
     });
 });
-
-
-
-
-// $(this).css('border-color', 'red');
 
 
 
